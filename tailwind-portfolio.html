@@ -22,7 +22,7 @@
         style="background: rgba(255, 255, 255, 0.5);">
         <div class="bg-white rounded-full w-full scrollbar-thumb" style="height: 27.8307px;"></div>
     </div>
-    <div class="cursor"></div>
+
     <section class="h-screen bg-black md:mx-20 mx-14">
         <nav class="h-16 flex items-center justify-center pt-8 text-white">
             <div
@@ -30,7 +30,7 @@
                 <a href="#about" class="mx-3 my-5  ">About</a>
                 <a href="#Projects" class="mx-3 my-5 ">Projects</a>
                 <a href="#Tools" class="mx-3 my-5 ">Tools </a>
-                <a href="#" class="mx-3 my-5 ">Contact</a>
+                <a href="#Contact" class="mx-3 my-5 ">Contact</a>
             </div>
         </nav>
         <div class="flex flex-col h-20 mt-28 md:items-start text-white w-75% items-center ">
@@ -143,7 +143,7 @@
             </div>
         </div>
         <hr class="bg-white h-px w-full my-2 md:block hidden">
-        <div class="m-16">
+        <div class="m-16" id="Contact">
             <div class="flex items-center   text-2xl mt-10 mb-5 " id="Projects">
                 <h1 class="m-auto text-cyan-400 ">
                     <strong>Contact Me</strong>
@@ -151,7 +151,7 @@
             </div>
             <div class="flex flex-col text-white ">
                 <div class="py-5  flex">
-                    <p class="text-justify text-xl  m-auto">Wanna mail me or wanting to give a project, than press
+                    <p class=" text-xl  m-auto">Wanna mail me or wanting to give a project, than press
                         the button.</p>
                 </div>
                 <button
@@ -179,46 +179,6 @@
         font-family: 'Poppins';
 
     }
-
-    @media screen and (max-width:640px) {
-
-
-        .cursor {
-            display: none;
-        }
-    }
-
-    *::hover~.cursor {
-        scale: 3;
-        background-color: red;
-    }
-
-    .cursor {
-        position: absolute;
-        border-radius: 50%;
-        border: 1px solid white;
-        width: 24px;
-        height: 24px;
-        transition-duration: 200ms;
-        transition-timing-function: ease-out;
-        display: block;
-        /* z-index: 50; */
-    }
-
-
-    .cursor::after {
-        content: "";
-        width: 20px;
-        height: 20px;
-        border: 4px solid gray;
-        left: 1px;
-        top: 1px;
-        border-radius: 50%;
-        position: absolute;
-    }
-
-
-    /* Cursor animation on click */
 </style>
 
 </html>
