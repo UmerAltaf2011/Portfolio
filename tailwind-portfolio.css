@@ -226,16 +226,16 @@ body.light-mode #cursor-ring.cursor-hover {
 }
 
 #cursor-dot {
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
   background-color: white;
   border-radius: 50%;
   mix-blend-mode: difference;
 }
 
 #cursor-ring {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border: 2px solid white;
   border-radius: 50%;
   transition: transform 0.15s ease, border 0.2s ease;
