@@ -80,3 +80,26 @@ window.addEventListener("load", function() {
     moonIcon.classList.toggle('hidden', !isLight);
   });
 
+  const scrollBar = document.getElementById('scroll-progress');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    scrollBar.style.width = scrollPercent + '%';
+  });
+
+  
+ 
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    const content = document.getElementById("main-content");
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = "none";
+      content.classList.remove("opacity-0", "scale-95");
+      content.classList.add("opacity-100", "scale-100");
+    }, 500);
+  });
+  
+
