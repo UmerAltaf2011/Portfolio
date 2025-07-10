@@ -1,20 +1,12 @@
+
+
 const cursorDot = document.getElementById("cursor-dot");
 const cursorRing = document.getElementById("cursor-ring");
 
-// Ensure proper styles are applied
-cursorDot.style.position = "fixed";
-cursorRing.style.position = "fixed";
-cursorDot.style.pointerEvents = "none";
-cursorRing.style.pointerEvents = "none";
-cursorDot.style.transform = "translate(-50%, -50%)";
-cursorRing.style.transform = "translate(-50%, -50%)";
-cursorDot.style.zIndex = "9999";
-cursorRing.style.zIndex = "9999";
-
-// Handle cursor movement (scroll-safe)
+// Always follow the page scroll
 document.addEventListener("mousemove", (e) => {
-  const x = e.pageX;
-  const y = e.pageY;
+  const x = e.clientX + window.scrollX;
+  const y = e.clientY + window.scrollY;
 
   cursorDot.style.left = `${x}px`;
   cursorDot.style.top = `${y}px`;
@@ -23,9 +15,12 @@ document.addEventListener("mousemove", (e) => {
   cursorRing.style.top = `${y}px`;
 });
 
-// Hover effect on interactive elements
-const interactiveEls = document.querySelectorAll("a, button, .glass, span");
-interactiveEls.forEach(el => {
+// Grow cursor on hover for all interactive elements
+const hoverElements = document.querySelectorAll(
+  "a, button, .glass, span, .neon-text, #theme-toggle"
+);
+
+hoverElements.forEach((el) => {
   el.addEventListener("mouseenter", () => {
     cursorRing.classList.add("cursor-hover");
   });
@@ -34,24 +29,14 @@ interactiveEls.forEach(el => {
   });
 });
 
-// Neon text hover
-const neonText = document.querySelectorAll(".neon-text");
-neonText.forEach(el => {
-  el.addEventListener("mouseenter", () => {
-    cursorRing.classList.add("cursor-hover");
-  });
-  el.addEventListener("mouseleave", () => {
-    cursorRing.classList.remove("cursor-hover");
-  });
-});
-
-// Click grow effect
+// Click pulse effect
 document.addEventListener("click", () => {
   cursorRing.classList.add("click-grow");
   setTimeout(() => {
     cursorRing.classList.remove("click-grow");
   }, 300);
 });
+
 
 // Scroll animations for skill cards
 const skillCards = document.querySelectorAll('.skill-pill');
