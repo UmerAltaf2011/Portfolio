@@ -225,3 +225,19 @@ body.light-mode #cursor-ring.cursor-hover {
   transform: scale(1.1);
 }
 
+#cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+}
+
+#cursor-ring {
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 50%;
+  transition: transform 0.15s ease, border 0.2s ease;
+  mix-blend-mode: difference;
+}
