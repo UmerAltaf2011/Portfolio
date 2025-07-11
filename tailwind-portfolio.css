@@ -312,3 +312,7 @@ body.light-mode #cursor-ring.cursor-hover {
     background-position: 100% 100%;
   }
 }
+#game-div{
+  display: flex;
+  justify-content: center;
+}
