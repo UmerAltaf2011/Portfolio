@@ -170,7 +170,7 @@ opacity: 0.12;
     }
   body.light-mode {
   color: #111;
-background-color:white;  background-size: 200% 200%;
+background: white;  background-size: 200% 200%;
   animation: animatedGradient 10s ease infinite;
 }
 
